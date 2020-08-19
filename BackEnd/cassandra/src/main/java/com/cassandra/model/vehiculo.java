@@ -13,12 +13,12 @@ public class vehiculo {
     private String modelo;
     private String colorP;
     private String colorS;
-    private Date anioFabri;
+    private String anioFabri;
 
     public vehiculo() {
     }
 
-    public vehiculo(int id, String marca, String modelo, String colorP, String colorS, Date anioFabri) {
+    public vehiculo(int id, String marca, String modelo, String colorP, String colorS, String anioFabri) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -69,11 +69,11 @@ public class vehiculo {
         this.colorS = colorS;
     }
 
-    public Date getAnioFabri() {
+    public String getAnioFabri() {
         return anioFabri;
     }
 
-    public void setAnioFabri(Date anioFabri) {
+    public void setAnioFabri(String anioFabri) {
         this.anioFabri = anioFabri;
     }
     

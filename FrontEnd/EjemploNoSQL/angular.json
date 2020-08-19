@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "EjemploNoSQL"
+    }
+  },
+  "defaultProject": "EjemploNoSQL",
+  "cli": {
+    "analytics": "4ccc8b5b-fef6-45a5-b9f9-d8581dd31c27"
+  }
 }

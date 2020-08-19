@@ -19,14 +19,14 @@ import { TarjetaVehiculosComponent } from './components/tarjeta-vehiculos/tarjet
     BodyComponent,
     FooterComponent,
     HeaderComponent,
+    TarjetaPersonaComponent,
     TarjetaVehiculosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     APPROUTING,
-    AppRoutingModule,
-    TarjetaPersonaComponent
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

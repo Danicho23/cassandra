@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { TarjetaPersonaComponent } from './components/tarjeta-persona/tarjeta-persona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent
+    FormularioComponent,
+    TarjetaPersonaComponent
   ],
   imports: [
     BrowserModule,

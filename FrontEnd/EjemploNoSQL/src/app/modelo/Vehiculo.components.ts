@@ -4,6 +4,5 @@ export interface Vehiculo {
     modelo: string;
     colorP: string;
     colorS: string;
-    edad: number;
-    anioFabri: Date;
+    anioFabri: string;
 }

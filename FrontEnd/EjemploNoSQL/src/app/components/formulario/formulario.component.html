@@ -1,1 +1,112 @@
-
+<div class="row">
+    <div class="col-sm-6">
+        <table border="0">
+            <tr>
+                <td width="50%"> Cedula: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtid" #id="ngModel" placeholder="Escriba su cedula" name="id" size="35" [(ngModel)]="model.cedula" maxlength="10" required>
+                    <div *ngIf="id.touched && !id.valid">
+                        <div *ngIf="id.errors.required">Debe ingresar la cedula</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Nombre: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtnomb" #nomb="ngModel" placeholder="Escriba el nombre " name="nomb" size="35" [(ngModel)]="model.nombre" required pattern="[A-Za-z ]+">
+                    <div *ngIf="nomb.touched && !nomb.valid">
+                        <div *ngIf="nomb.errors.required">Debe ingresar el nombre</div>
+                    </div>
+                    <div *ngIf="!nomb.valid">
+                        <div *ngIf="nomb.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Apellido: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtapll" #apll="ngModel" placeholder="Escriba el apellido " name="apll" size="35" [(ngModel)]="model.apellido" required pattern="[A-Za-z ]+">
+                    <div *ngIf="apll.touched && !apll.valid">
+                        <div *ngIf="apll.errors.required">Debe ingresar el apellido</div>
+                    </div>
+                    <div *ngIf="!apll.valid">
+                        <div *ngIf="apll.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Edad: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txttelef" #telef="ngModel" size="35" onkeypress='return event.charCode >= 48 && event.charCode <= 57' [(ngModel)]="model.edad" name="telef" maxlength="13" required>
+                    <div *ngIf="telef.touched && !telef.valid">
+                        <div *ngIf="telef.errors.required">Debe ingresar la edad</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <table>
+            <tr>
+                <td width="50%"> Marca: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtnomb" #nomb="ngModel" placeholder="Escriba el nombre " name="nomb" size="35" [(ngModel)]="model2.marca" required pattern="[A-Za-z ]+">
+                    <div *ngIf="nomb.touched && !nomb.valid">
+                        <div *ngIf="nomb.errors.required">Debe ingresar la marca del vehiculo</div>
+                    </div>
+                    <div *ngIf="!nomb.valid">
+                        <div *ngIf="nomb.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Modelo: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtapll" #apll="ngModel" placeholder="Escriba el apellido " name="apll" size="35" [(ngModel)]="model2.modelo" required pattern="[A-Za-z ]+">
+                    <div *ngIf="apll.touched && !apll.valid">
+                        <div *ngIf="apll.errors.required">Debe ingresar el modelo del vehiculo</div>
+                    </div>
+                    <div *ngIf="!apll.valid">
+                        <div *ngIf="apll.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Color principal: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtinst" #inst="ngModel" placeholder="Escriba el color principal " name="inst" size="35" [(ngModel)]="model2.colorP" required pattern="[A-Za-z ]+">
+                    <div *ngIf="inst.touched && !inst.valid">
+                        <div *ngIf="inst.errors.required">Debe ingresar el color principal</div>
+                    </div>
+                    <div *ngIf="!inst.valid">
+                        <div *ngIf="inst.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Color Secundario: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtinst" #inst="ngModel" placeholder="Escriba el color secundario " name="inst" size="35" [(ngModel)]="model2.colorS" required pattern="[A-Za-z ]+">
+                    <div *ngIf="!inst.valid">
+                        <div *ngIf="inst.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"> Año de Fabricación: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtapll" #apll="ngModel" placeholder="dd/MM/yyyy " name="apll" size="35" [(ngModel)]="model2.anioFabri" required pattern="[A-Za-z ]+">
+                    <div *ngIf="apll.touched && !apll.valid">
+                        <div *ngIf="apll.errors.required">Debe ingresar el Año de Fabricación</div>
+                    </div>
+                    <div *ngIf="!apll.valid">
+                        <div *ngIf="apll.errors.pattern">Solo debe ingresar letras</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div align="center">
+    <button (click)="registrar()" type="button" class="btn btn-lg btn-primary">Registrar los Datos</button>
+</div>

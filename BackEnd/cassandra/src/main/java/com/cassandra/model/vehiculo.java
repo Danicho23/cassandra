@@ -1,7 +1,5 @@
 
 package com.cassandra.model;
-
-import java.util.Date;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 

@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 //componentes
 import { TarjetaPersonaComponent } from './components/tarjeta-persona/tarjeta-persona.component';
+import { TarjetaVehiculosComponent } from './components/tarjeta-vehiculos/tarjeta-vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TarjetaPersonaComponent } from './components/tarjeta-persona/tarjeta-pe
     FormularioComponent,
     BodyComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TarjetaVehiculosComponent
   ],
   imports: [
     BrowserModule,

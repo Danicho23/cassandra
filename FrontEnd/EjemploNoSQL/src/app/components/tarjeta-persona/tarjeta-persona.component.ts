@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import{Persona} from '../../modelo/Persona.component'
-import{Vehiculo} from '../../modelo/Vehiculo.components'
+
 //componentes
 @Component({
   selector: 'app-tarjeta-persona',

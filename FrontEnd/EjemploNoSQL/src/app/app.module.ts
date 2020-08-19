@@ -8,6 +8,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+//componentes
+import { TarjetaPersonaComponent } from './components/tarjeta-persona/tarjeta-persona.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     FormsModule,
     APPROUTING,
-    AppRoutingModule
+    AppRoutingModule,
+    TarjetaPersonaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

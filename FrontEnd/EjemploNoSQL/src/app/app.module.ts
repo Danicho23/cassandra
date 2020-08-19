@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 //componentes
 import { TarjetaPersonaComponent } from './components/tarjeta-persona/tarjeta-persona.component';
 import { TarjetaVehiculosComponent } from './components/tarjeta-vehiculos/tarjeta-vehiculos.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TarjetaVehiculosComponent } from './components/tarjeta-vehiculos/tarjet
     BrowserModule,
     FormsModule,
     APPROUTING,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

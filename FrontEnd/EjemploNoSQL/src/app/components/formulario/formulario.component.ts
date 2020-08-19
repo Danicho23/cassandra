@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../modelo/Persona.component';
 import { Vehiculo } from '../../modelo/Vehiculo.components';
+import { PersonaService } from '../../service/persona.service';
+import { VehiculoService } from '../../service/vehiculo.service';
 
 @Component({
   selector: 'app-formulario',
@@ -11,9 +13,17 @@ export class FormularioComponent implements OnInit {
   model: Persona = {id: 0, cedula: '', nombre: '', apellido: '', edad: 0};
   model2: Vehiculo = { id: 0, marca: '', modelo: '', colorP: '', colorS: '', anioFabri: ''};
 
-  constructor() { }
+  constructor(private servicioP: PersonaService, private servicioV: VehiculoService) { }
   ngOnInit(): void {
   }
-  public registrar(){
+  registrar(){
+    this.registP();
+    this.registV();
+  }
+  registP(){
+    return this.servicioP.registrarPersonas(this.model).subscribe(data => console.log(data));
+  }
+  registV(){
+    return this.servicioV.registrarV(this.model2).subscribe(data => console.log(data));
   }
 }

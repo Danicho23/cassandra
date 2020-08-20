@@ -8,6 +8,7 @@ export class PersonaService {
   Url = 'http://localhost:9094';
   constructor(private http: HttpClient) { }
 
+  
   obtenerPersonas(){
     return this.http.get<Persona[]>(this.Url + '/personas');
   }

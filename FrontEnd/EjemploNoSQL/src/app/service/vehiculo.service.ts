@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Vehiculo } from '../modelo/Vehiculo.components';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,9 @@ export class VehiculoService {
 
   Url = 'http://localhost:9094';
   constructor(private http: HttpClient) { }
+  getProductos():Observable<any>{
+    return this.http.get(this.Url+"/all");
+  }
 
   obtenerV(){
     return this.http.get<Vehiculo[]>(this.Url + '/vehiculos');

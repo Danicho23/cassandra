@@ -13,8 +13,17 @@ export class FormularioComponent implements OnInit {
   model: Persona = {id: 0, cedula: '', nombre: '', apellido: '', edad: 0};
   model2: Vehiculo = { id: 0, marca: '', modelo: '', colorP: '', colorS: '', anioFabri: ''};
 
+  personas: Persona[];
+  persona: Persona;
+
   constructor(private servicioP: PersonaService, private servicioV: VehiculoService) { }
   ngOnInit(): void {
+    this.obtener();
+  }
+
+  obtener(){
+    return this.servicioP.obtenerPersonas().subscribe(result => this.personas = result);
+    
   }
   registrar(){
     this.registP();

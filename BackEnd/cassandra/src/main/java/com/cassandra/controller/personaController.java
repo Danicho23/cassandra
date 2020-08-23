@@ -5,19 +5,20 @@ import com.cassandra.model.persona;
 import com.cassandra.repository.personaRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "*")
 @RestController
+@RequestMapping("/api")
 public class personaController {
     
     @Autowired
     personaRepository server;
+    
     
     @GetMapping(path = "/personas")
     public ResponseEntity<List<persona>> obtenerPersona(){
@@ -34,10 +35,11 @@ public class personaController {
     }
     
     @PostMapping(path = "/persona")
-    public ResponseEntity<persona> obtenerPersona(@RequestBody persona datos){
+    @CrossOrigin
+    public ResponseEntity<persona> guardarPersona(@RequestBody persona datos){
         try{
-            persona dat = server.save(new persona(datos.getId(), datos.getNombre(), datos.getApellido(), datos.getEdad()));
-            return new ResponseEntity<>(dat , HttpStatus.CREATED);
+            persona dato = server.save(new persona(UUID.randomUUID(), datos.getCedula(),datos.getNombre(), datos.getApellido(), datos.getEdad()));
+            return new ResponseEntity<>(dato , HttpStatus.CREATED);
         }catch(Exception e){
             return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);
         }

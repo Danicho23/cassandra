@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class VehiculoService {
 
-  Url = 'http://localhost:9094';
+  Url = 'http://localhost:8080';
   constructor(private http: HttpClient) { }
   getProductos():Observable<any>{
     return this.http.get(this.Url+"/all");

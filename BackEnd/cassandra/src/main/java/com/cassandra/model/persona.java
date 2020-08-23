@@ -1,5 +1,6 @@
 package com.cassandra.model;
 
+import java.rmi.server.UID;
 import java.util.UUID;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
@@ -14,19 +15,12 @@ public class persona {
     private String apellido;
     private int edad;
 
-    public persona() {
-    }
-
     public persona(UUID id, String cedula, String nombre, String apellido, int edad) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
-    }
-
-    public persona(UUID id, String nombre, String apellido, int edad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public UUID getId() {

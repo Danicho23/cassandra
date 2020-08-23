@@ -1,6 +1,18 @@
 <div class="row">
     <div class="col-sm-6">
+        <div *ngFor="let persona of personas">
+            {{persona | json}}
+        </div>
         <table border="0">
+            <tr>
+                <td width="50%"> id: </td>
+                <td width="50%">
+                    <input type="text" class="form-control" id="txtid" #id="ngModel" size="35" onkeypress='return event.charCode >= 48 && event.charCode <= 57' [(ngModel)]="model.id" name="telef" maxlength="13" required>
+                    <div *ngIf="id.touched && !id.valid">
+                        <div *ngIf="id.errors.required">Debe ingresar el id</div>
+                    </div>
+                </td>
+            </tr>
             <tr>
                 <td width="50%"> Cedula: </td>
                 <td width="50%">
@@ -46,61 +58,70 @@
         </table>
     </div>
     <div class="col-sm-6">
+        <tr>
+            <td width="50%"> id: </td>
+            <td width="50%">
+                <input type="text" class="form-control" id="txtid2" #id2="ngModel" size="35" onkeypress='return event.charCode >= 48 && event.charCode <= 57' [(ngModel)]="model.id" name="telef" maxlength="13" required>
+                <div *ngIf="id2.touched && !id2.valid">
+                    <div *ngIf="id2.errors.required">Debe ingresar el id</div>
+                </div>
+            </td>
+        </tr>
         <table>
             <tr>
                 <td width="50%"> Marca: </td>
                 <td width="50%">
-                    <input type="text" class="form-control" id="txtnomb" #nomb="ngModel" placeholder="Escriba el nombre " name="nomb" size="35" [(ngModel)]="model2.marca" required pattern="[A-Za-z ]+">
-                    <div *ngIf="nomb.touched && !nomb.valid">
+                    <input type="text" class="form-control" id="txtmarca" #marca="ngModel" placeholder="Escriba la marca " name="marca" size="35" [(ngModel)]="model2.marca" required pattern="[A-Za-z ]+">
+                    <div *ngIf="marca.touched && !marca.valid">
                         <div *ngIf="nomb.errors.required">Debe ingresar la marca del vehiculo</div>
                     </div>
-                    <div *ngIf="!nomb.valid">
-                        <div *ngIf="nomb.errors.pattern">Solo debe ingresar letras</div>
+                    <div *ngIf="!marca.valid">
+                        <div *ngIf="marca.errors.pattern">Solo debe ingresar letras</div>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td width="50%"> Modelo: </td>
                 <td width="50%">
-                    <input type="text" class="form-control" id="txtapll" #apll="ngModel" placeholder="Escriba el apellido " name="apll" size="35" [(ngModel)]="model2.modelo" required pattern="[A-Za-z ]+">
-                    <div *ngIf="apll.touched && !apll.valid">
-                        <div *ngIf="apll.errors.required">Debe ingresar el modelo del vehiculo</div>
+                    <input type="text" class="form-control" id="txtmodelo" #modelo="ngModel" placeholder="Escriba el modelo " name="modelo" size="35" [(ngModel)]="model2.modelo" required pattern="[A-Za-z ]+">
+                    <div *ngIf="modelo.touched && !modelo.valid">
+                        <div *ngIf="modelo.errors.required">Debe ingresar el modelo del vehiculo</div>
                     </div>
-                    <div *ngIf="!apll.valid">
-                        <div *ngIf="apll.errors.pattern">Solo debe ingresar letras</div>
+                    <div *ngIf="!modelo.valid">
+                        <div *ngIf="modelo.errors.pattern">Solo debe ingresar letras</div>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td width="50%"> Color principal: </td>
                 <td width="50%">
-                    <input type="text" class="form-control" id="txtinst" #inst="ngModel" placeholder="Escriba el color principal " name="inst" size="35" [(ngModel)]="model2.colorP" required pattern="[A-Za-z ]+">
-                    <div *ngIf="inst.touched && !inst.valid">
-                        <div *ngIf="inst.errors.required">Debe ingresar el color principal</div>
+                    <input type="text" class="form-control" id="txtclp" #clp="ngModel" placeholder="Escriba el color principal " name="clp" size="35" [(ngModel)]="model2.colorP" required pattern="[A-Za-z ]+">
+                    <div *ngIf="clp.touched && !clp.valid">
+                        <div *ngIf="clp.errors.required">Debe ingresar el color principal</div>
                     </div>
-                    <div *ngIf="!inst.valid">
-                        <div *ngIf="inst.errors.pattern">Solo debe ingresar letras</div>
+                    <div *ngIf="!clp.valid">
+                        <div *ngIf="clp.errors.pattern">Solo debe ingresar letras</div>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td width="50%"> Color Secundario: </td>
                 <td width="50%">
-                    <input type="text" class="form-control" id="txtinst" #inst="ngModel" placeholder="Escriba el color secundario " name="inst" size="35" [(ngModel)]="model2.colorS" required pattern="[A-Za-z ]+">
-                    <div *ngIf="!inst.valid">
-                        <div *ngIf="inst.errors.pattern">Solo debe ingresar letras</div>
+                    <input type="text" class="form-control" id="txtcls" #cls="ngModel" placeholder="Escriba el color secundario " name="cls" size="35" [(ngModel)]="model2.colorS" required pattern="[A-Za-z ]+">
+                    <div *ngIf="!cls.valid">
+                        <div *ngIf="cls.errors.pattern">Solo debe ingresar letras</div>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td width="50%"> Año de Fabricación: </td>
                 <td width="50%">
-                    <input type="text" class="form-control" id="txtapll" #apll="ngModel" placeholder="dd/MM/yyyy " name="apll" size="35" [(ngModel)]="model2.anioFabri" required pattern="[A-Za-z ]+">
-                    <div *ngIf="apll.touched && !apll.valid">
-                        <div *ngIf="apll.errors.required">Debe ingresar el Año de Fabricación</div>
+                    <input type="text" class="form-control" id="txtafr" #afr="ngModel" placeholder="dd/MM/yyyy " name="afr" size="35" [(ngModel)]="model2.anioFabri">
+                    <div *ngIf="afr.touched && !afr.valid">
+                        <div *ngIf="afr.errors.required">Debe ingresar el Año de Fabricación</div>
                     </div>
-                    <div *ngIf="!apll.valid">
-                        <div *ngIf="apll.errors.pattern">Solo debe ingresar letras</div>
+                    <div *ngIf="!afr.valid">
+                        <div *ngIf="afr.errors.pattern">Solo debe ingresar letras</div>
                     </div>
                 </td>
             </tr>

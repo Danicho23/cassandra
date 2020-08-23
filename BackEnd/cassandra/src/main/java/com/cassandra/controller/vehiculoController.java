@@ -5,6 +5,7 @@ import com.cassandra.model.vehiculo;
 import com.cassandra.repository.vehiculoRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,7 @@ public class vehiculoController {
     @CrossOrigin
     public ResponseEntity<vehiculo> obtenerPersona(@RequestBody vehiculo datos){
         try{
-            vehiculo dat = server.save(new vehiculo(datos.getId(), datos.getMarca(), datos.getModelo(), datos.getColorP(), datos.getColorS(), datos.getAnioFabri()));
+            vehiculo dat = server.save(new vehiculo(UUID.randomUUID(), datos.getMarca(), datos.getModelo(), datos.getColorP(), datos.getColorS(), datos.getAnioFabri()));
             return new ResponseEntity<>(dat , HttpStatus.CREATED);
         }catch(Exception e){
             return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);

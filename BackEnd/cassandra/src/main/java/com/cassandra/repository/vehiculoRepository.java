@@ -7,7 +7,7 @@ import java.util.UUID;
 import org.springframework.data.cassandra.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface vehiculoRepository extends CrudRepository<vehiculo, UUID>{
+public interface vehiculoRepository extends CrudRepository<vehiculo, String>{
     
     @Query(value = "SELECT * FROM vehiculo WHERE marca=?0")
     public List<vehiculo> findBymarca(String marca);

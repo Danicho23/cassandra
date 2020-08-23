@@ -38,10 +38,21 @@ public class personaController {
     @CrossOrigin
     public ResponseEntity<persona> guardarPersona(@RequestBody persona datos){
         try{
+            
             persona dato = server.save(new persona(UUID.randomUUID(), datos.getCedula(),datos.getNombre(), datos.getApellido(), datos.getEdad()));
             return new ResponseEntity<>(dato , HttpStatus.CREATED);
         }catch(Exception e){
             return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+    
+    @DeleteMapping(path = "/eliminar/{id}")
+    @CrossOrigin
+    public void eliminarPersona(String id){
+        try{
+        server.deleteById(id);
+         }catch(Exception e){
+             System.out.println("error: "+e.getMessage());
+         }
     }
 }

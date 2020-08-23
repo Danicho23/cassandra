@@ -5,7 +5,7 @@ import { Persona } from '../modelo/Persona.component';
   providedIn: 'root'
 })
 export class PersonaService {
-  Url = 'http://localhost:8080';
+  Url = 'http://localhost:9898/api';
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line: typedef

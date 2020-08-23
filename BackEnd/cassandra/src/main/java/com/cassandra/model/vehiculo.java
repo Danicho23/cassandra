@@ -7,7 +7,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @Table
 public class vehiculo {
     @PrimaryKey
-    private int id;
+    private UUID id;
     private String marca;
     private String modelo;
     private String colorP;
@@ -15,7 +15,7 @@ public class vehiculo {
     private String anioFabri;
 
 
-    public vehiculo(int id, String marca, String modelo, String colorP, String colorS, String anioFabri) {
+    public vehiculo(UUID id, String marca, String modelo, String colorP, String colorS, String anioFabri) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -24,11 +24,11 @@ public class vehiculo {
         this.anioFabri = anioFabri;
     }
     
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

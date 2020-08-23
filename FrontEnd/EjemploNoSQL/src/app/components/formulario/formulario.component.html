@@ -5,15 +5,6 @@
         </div>
         <table border="0">
             <tr>
-                <td width="50%"> id: </td>
-                <td width="50%">
-                    <input type="text" class="form-control" id="txtid" #id="ngModel" size="35" onkeypress='return event.charCode >= 48 && event.charCode <= 57' [(ngModel)]="model.id" name="telef" maxlength="13" required>
-                    <div *ngIf="id.touched && !id.valid">
-                        <div *ngIf="id.errors.required">Debe ingresar el id</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
                 <td width="50%"> Cedula: </td>
                 <td width="50%">
                     <input type="text" class="form-control" id="txtid" #id="ngModel" placeholder="Escriba su cedula" name="id" size="35" [(ngModel)]="model.cedula" maxlength="10" required>
@@ -58,15 +49,6 @@
         </table>
     </div>
     <div class="col-sm-6">
-        <tr>
-            <td width="50%"> id: </td>
-            <td width="50%">
-                <input type="text" class="form-control" id="txtid2" #id2="ngModel" size="35" onkeypress='return event.charCode >= 48 && event.charCode <= 57' [(ngModel)]="model.id" name="telef" maxlength="13" required>
-                <div *ngIf="id2.touched && !id2.valid">
-                    <div *ngIf="id2.errors.required">Debe ingresar el id</div>
-                </div>
-            </td>
-        </tr>
         <table>
             <tr>
                 <td width="50%"> Marca: </td>

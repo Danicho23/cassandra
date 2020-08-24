@@ -3,6 +3,7 @@ import { Persona } from '../../modelo/Persona.component';
 import { Vehiculo } from '../../modelo/Vehiculo.components';
 import { PersonaService } from '../../service/persona.service';
 import { VehiculoService } from '../../service/vehiculo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -13,26 +14,19 @@ export class FormularioComponent implements OnInit {
   model: Persona = {id: '', cedula: '', nombre: '', apellido: '', edad: 0};
   model2: Vehiculo = { id: '', marca: '', modelo: '', colorP: '', colorS: '', anioFabri: ''};
 
-  personas: Persona[];
-  persona: Persona;
-
-  constructor(private servicioP: PersonaService, private servicioV: VehiculoService) { }
+  constructor(private servicioP: PersonaService, private servicioV: VehiculoService, private routes: Router) { }
   ngOnInit(): void {
-    this.obtener();
-  }
-
-  obtener(){
-    return this.servicioP.obtenerPersonas().subscribe(result => this.personas = result);
-    
   }
   registrar(){
     this.registP();
     this.registV();
   }
   registP(){
-    return this.servicioP.registrarPersonas(this.model).subscribe(data => console.log(data));
+    this.servicioP.registrarPersonas(this.model).subscribe(data => console.log(data));
+    this.routes.navigate(['listPerson']);
   }
   registV(){
-    return this.servicioV.registrarV(this.model2).subscribe(data => console.log(data));
+    this.servicioV.registrarV(this.model2).subscribe(data => console.log(data));
+    this.routes.navigate(['listCars']);
   }
 }

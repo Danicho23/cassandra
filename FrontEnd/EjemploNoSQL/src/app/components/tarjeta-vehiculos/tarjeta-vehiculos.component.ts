@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import{Vehiculo} from '../../modelo/Vehiculo.components'
-import{VehiculoService}from '../../service/vehiculo.service'
+import {Vehiculo} from '../../modelo/Vehiculo.components';
 
 @Component({
   selector: 'app-tarjeta-vehiculos',
@@ -8,19 +7,14 @@ import{VehiculoService}from '../../service/vehiculo.service'
   styleUrls: ['./tarjeta-vehiculos.component.css']
 })
 export class TarjetaVehiculosComponent implements OnInit {
-  @Input() vehiculo: Vehiculo;
-  @Input() indice: number;
-  @Output() vehiculoSleccionado: EventEmitter<number>;
-  vehicul: Vehiculo[];
-  constructor(private service: VehiculoService) {
+  @Input() vehiculos: Vehiculo;
+  @Input() indice: string;
+  @Output() vehiculoSleccionado: EventEmitter<string>;
+  constructor() {
     this.vehiculoSleccionado = new EventEmitter();
   }
 
   ngOnInit(): void {
-    this.service.obtenerV().subscribe(data => {
-      this.vehicul = data;
-      console.log('prod', data);
-    });
   }
 
 }
